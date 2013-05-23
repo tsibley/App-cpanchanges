@@ -25,14 +25,23 @@ if ($opt{help}) {
 } else {
     my $name = shift or die usage();
     my $changes = changes($name);
+    my $text = "# Changes for $changes->{author}/$changes->{release}\n\n"
+             . $changes->{content} . "\n";
 
-    if ($ENV{PAGER} and -t *STDOUT) {
+    my $head  = join "\n", (split /\n/, $changes->{content})[0..8];
+    my $pod   = $head =~ /^=(pod|head|encoding|over|begin|for)/m;
+
+    my $external = $pod        ? ($ENV{CPANCHANGES_PERLDOC} || "perldoc") :
+                   $ENV{PAGER} ? $ENV{PAGER}                              :
+                                 undef                                    ;
+
+    if ($external and -t *STDOUT) {
         my $tmp = File::Temp->new;
-        print { $tmp } $changes;
-        system(qq[$ENV{PAGER} "@{[$tmp->filename]}"]) == 0
-            or die "Couldn't run \$PAGER ($ENV{PAGER}): $!\n";
+        print { $tmp } $text;
+        system(qq[$external "@{[$tmp->filename]}"]) == 0
+            or die "Couldn't run `$external`: $!\n";
     } else {
-        print $changes;
+        print $text;
     }
 }
 exit;
@@ -46,6 +55,14 @@ usage: cpanchanges Moose
   --distribution, -d    Lookup by distribution, not module, name
   --help                Show this help
   --version             Show version
+
+The change log text is displayed using the command in the PAGER environment
+variable, if available.   If the output is not going to a terminal or PAGER
+isn't defined, PAGER is not used.
+
+If the change log format is detected as POD, the `perldoc` command will be used
+to display it.  You can change the command used by setting CPANCHANGES_PERLDOC.
+No special handling of POD happens when output is not to a terminal.
 
 .
 }
@@ -67,8 +84,7 @@ sub changes {
     my $changes = request( changes => @release )
         or die "Unable to find changes for ", join("/", @release), "\n";
 
-    return "# Changes for $changes->{author}/$changes->{release}\n\n"
-          . $changes->{content} . "\n";
+    return $changes;
 }
 
 sub request {
