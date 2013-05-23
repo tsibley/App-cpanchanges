@@ -1,5 +1,5 @@
 {
-   "abstract" : "Lookup and display change logs of CPAN releases",
+   "abstract" : "Look up and display change logs of CPAN releases",
    "author" : [
       "Thomas Sibley <tsibley@cpan.org>"
    ],
@@ -57,6 +57,9 @@
          "web" : "https://github.com/tsibley/App-cpanchanges"
       }
    },
-   "version" : "20130522.0"
+   "version" : "20130523.0",
+   "x_contributors" : [
+      "Olaf Alders <olaf@wundersolutions.com>"
+   ]
 }
 

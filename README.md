@@ -1,6 +1,6 @@
 # NAME
 
-App::cpanchanges - Lookup and display change logs of CPAN releases
+App::cpanchanges - Look up and display change logs of CPAN releases
 
 # SYNOPSIS
 
@@ -12,7 +12,7 @@ App::cpanchanges - Lookup and display change logs of CPAN releases
 # DESCRIPTION
 
 App::cpanchanges looks up release change logs from
-[MetaCPAN](https://metacpan.org)'s API and display thems to you in your
+[MetaCPAN](https://metacpan.org)'s API and displays them to you in your
 terminal.  Think of it as [perldoc](http://search.cpan.org/perldoc?perldoc) or [cpandoc](http://search.cpan.org/perldoc?Pod::Cpandoc) for change
 logs.
 
