@@ -11,7 +11,7 @@ __END__
 
 =head1 NAME
 
-App::cpanchanges - Lookup and display change logs of CPAN releases
+App::cpanchanges - Look up and display change logs of CPAN releases
 
 =head1 SYNOPSIS
 
@@ -23,7 +23,7 @@ App::cpanchanges - Lookup and display change logs of CPAN releases
 =head1 DESCRIPTION
 
 App::cpanchanges looks up release change logs from
-L<MetaCPAN|https://metacpan.org>'s API and display thems to you in your
+L<MetaCPAN|https://metacpan.org>'s API and displays them to you in your
 terminal.  Think of it as L<perldoc> or L<cpandoc|Pod::Cpandoc> for change
 logs.
 
