@@ -28,7 +28,7 @@ if ($opt{help}) {
     my $text = "# Changes for $changes->{author}/$changes->{release}\n\n"
              . $changes->{content} . "\n";
 
-    my $head  = join "\n", (split /\n/, $changes->{content})[0..8];
+    my $head  = join "\n", grep defined, (split /\n/, $changes->{content})[0..8];
     my $pod   = $head =~ /^=(pod|head|encoding|over|begin|for)/m;
 
     my $external = $pod        ? ($ENV{CPANCHANGES_PERLDOC} || "perldoc") :
