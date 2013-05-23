@@ -36,12 +36,12 @@
       },
       "runtime" : {
          "requires" : {
+            "File::Temp" : "0",
+            "Getopt::Long" : "0",
+            "JSON" : "0",
+            "LWP::UserAgent" : "0",
+            "URI::Escape" : "0",
             "perl" : "5.008005"
-         }
-      },
-      "test" : {
-         "requires" : {
-            "Test::More" : "0.88"
          }
       }
    },

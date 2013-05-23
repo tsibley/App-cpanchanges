@@ -20,8 +20,9 @@ By default it expects a module name which it maps to the latest release
 (`AUTHOR/Release-Name-VERSION`) and then looks up the changes file for that
 release.
 
-App::cpangrep is the guts of the included cpanchanges script, and may be used a
-library if desired.
+App::cpangrep is simply a package placeholder for the included cpanchanges
+script.  The (currently very tiny) guts of the script may be librarized in the
+future, but they're very simple right now.
 
 # AUTHOR
 
@@ -35,5 +36,3 @@ Copyright 2013- Thomas Sibley
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
-
-# SEE ALSO
