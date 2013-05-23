@@ -29,7 +29,7 @@ if ($opt{help}) {
     if ($ENV{PAGER} and -t *STDOUT) {
         my $tmp = File::Temp->new;
         print { $tmp } $changes;
-        system($ENV{PAGER}, $tmp->filename) == 0
+        system(qq[$ENV{PAGER} "@{[$tmp->filename]}"]) == 0
             or die "Couldn't run \$PAGER ($ENV{PAGER}): $!\n";
     } else {
         print $changes;
