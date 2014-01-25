@@ -31,7 +31,7 @@ By default it expects a module name which it maps to the latest release
 (C<AUTHOR/Release-Name-VERSION>) and then looks up the changes file for that
 release.
 
-App::cpangrep is simply a package placeholder for the included cpanchanges
+App::cpanchanges is simply a package placeholder for the included cpanchanges
 script.  The (currently very tiny) guts of the script may be librarized in the
 future, but they're very simple right now.
 
