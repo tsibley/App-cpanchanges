@@ -1,6 +1,7 @@
 Revision history for App-cpanchanges
 
 {{$NEXT}}
+        - Use MetaCPAN's v1 API; v0 is gone
 
 20140125.0  2014-01-25 00:15:12 PST
         - Fix copy and paste error referring to cpangrep.  Thanks Olaf!
