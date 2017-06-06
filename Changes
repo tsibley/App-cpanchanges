@@ -1,6 +1,8 @@
 Revision history for App-cpanchanges
 
 {{$NEXT}}
+
+20170606.0  2017-06-06 11:55:23 PDT
         - Use MetaCPAN's v1 API; v0 is gone
 
 20140125.0  2014-01-25 00:15:12 PST
